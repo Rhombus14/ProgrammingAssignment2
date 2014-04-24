@@ -21,3 +21,6 @@ cacheSolve <- function(x, ...) {
 #   HI World!
   
 }
+
+myMat=matrix(rnorm(25,sd=100),5,5)
+solve(myMat)
