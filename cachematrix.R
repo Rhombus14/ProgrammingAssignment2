@@ -4,9 +4,10 @@
 
 ## Put comments here that give an overall description of what your
 ## functions do:
-# The purpose of this R script is to create two functions. The first function 
-# will create a square-invertible matrix and then cache its inverse.
-# The second function will do the inverse computation of the matrix.
+# The purpose of this R script is to create two functions that will return the 
+# inverse of a matrix. The first function will create a square-invertible 
+# matrix and then cache its inverse. The second function will do the inverse 
+# computation of the matrix.
 
 ##-----------------------------------------------------------------------------
 #
@@ -22,16 +23,16 @@
 makeCacheMatrix <- function(x = matrix()) 
   {
     m <- NULL
-    set <- function(y) 
+    set <- function(y) #This funciton will set the value of the matrix supplied
       {
         x <<- y
         m <<- NULL
       }
-    get <- function() 
+    get <- function() #This function will get the matrix "x"
     x
-    setInverse <- function(Inverse) 
+    setInverse <- function(Inverse) #This function will set the value of the Inverse
     m <<- Inverse
-    getInverse <- function() 
+    getInverse <- function() #This function will get the inverse
     m
     list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
   }
@@ -53,7 +54,7 @@ cacheSolve <- function(x, ...)
         return(m)
       }
     data <- x$get()
-    m <- solve(data, ...)
+    m <- solve(data, ...) # The 'solve' function calculates the inverse
     x$setInverse(m)
     m
   }
@@ -61,6 +62,7 @@ cacheSolve <- function(x, ...)
 #
 ##-----------------------------------------------------------------------------
 
+# PRACTICE TO SEE IF FUNCTION IS CORRECT
 # Call the function:
 
 # Example 1:
